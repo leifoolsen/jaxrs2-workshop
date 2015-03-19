@@ -22,7 +22,7 @@ Workshop: REST-baserte tjenester med JAX-RS 2, javaBin Sørlandet, 2015-04-15
 * Maven3 
 * IDE, f.eks. NetBeans, IntelliJ, Eclipse  
 
-## Bygg prosjektet på forhånd slik at prosjektets avhengigheter ligger i lokalt .m2-repo
+### Bygg prosjektet på forhånd slik at prosjektets avhengigheter ligger i lokalt .m2-repo
 * Fork, Clone eller last ned ZIP
 * Bygg prosjektet: mvn clean install -U
 

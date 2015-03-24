@@ -4,18 +4,20 @@ Workshop: REST-baserte tjenester med JAX-RS 2, javaBin Sørlandet, 2015-04-15
 ## Agenda
 * Komme i gang
   * Lage en "Hello World" tjeneste
+  * @Application
+  * @WebFilter, EntityManager og Unit of Work
+  * Interceptors. GZIP-interceptor.  
   * Koble opp database med JPA
   * Guice og Guice Persist
-  * @WebFilter, EntityManager og Unit of Work
 * Feilhåndtering
   * WebApplicationException
   * BeanValidation-API
   * Bruk av Exceptionmapper for å fange "alle typer" feil
-  * Design av meldingsformat
+  * Design av meldingsformat, JSON
 * HATEOAS
   * Hvilke hjelpemidler finnes i API'et
   * Eksempel på 3'dje-parts rammeverk
-  * Design/modellering av meldingsstruktur med tanke på navigerbarhet
+  * Design/modellering av meldingsstruktur med tanke på navigerbarhet, JSON
 
 ## Laptop som skal benyttes må ha følgende:
 * JDK-1.7 (eller høyere)

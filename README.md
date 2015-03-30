@@ -8,6 +8,7 @@ Workshop: REST-baserte tjenester med JAX-RS 2, javaBin Sørlandet, 2015-04-15
   * @WebFilter, EntityManager og Unit of Work
   * Interceptors. GZIP-interceptor.  
   * Koble opp database med JPA
+  * @POST og @PUT med @BeanParam injection
   * Guice og Guice Persist
 * Feilhåndtering
   * WebApplicationException

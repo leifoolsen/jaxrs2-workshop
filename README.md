@@ -42,3 +42,4 @@ Workshop: REST-baserte tjenester med JAX-RS 2, javaBin Sørlandet, 2015-04-15
 * HAL - Hypertext Application Language : http://stateless.co/hal_specification.html
 * {json:api} : http://jsonapi.org/
 * JSON for Linking Data : http://json-ld.org/
+

@@ -10,7 +10,7 @@ Workshop: REST-baserte tjenester med JAX-RS 2, javaBin Sørlandet, 2015-04-15
   * @Context. Resource injection av UriInfo og ResourceContext  
   * @WebFilter, EntityManager og Unit of Work. Koble opp database med JPA
   * @POST og @PUT med @BeanParam injection
-  * Guice og Guice Persist
+  * Guice og Guice Persist (utgår)
 * Feilhåndtering
   * WebApplicationException
   * BeanValidation-API
@@ -28,9 +28,9 @@ Workshop: REST-baserte tjenester med JAX-RS 2, javaBin Sørlandet, 2015-04-15
 * IDE, f.eks. NetBeans, IntelliJ, Eclipse
 * Nettleser med JSON plugin (jeg benytter Chrome med JSONView: https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc)
 
-### Bygg prosjektene på forhånd slik at prosjektets avhengigheter ligger i lokalt .m2-repo
+### Bygg prosjektene på forhånd slik at prosjektavhengigheter ligger i lokalt .m2-repo
 * Fork, Clone eller last ned ZIP
-* Bygg prosjektet: mvn clean install -U
+* Bygg prosjektene jaxrs-start og jaxrs-hateoas: kjør "mvn clean install -U" i begge prosjektmappene
 
 ### Nyttige lenker
 * Jersey home : https://jersey.java.net/
@@ -38,6 +38,8 @@ Workshop: REST-baserte tjenester med JAX-RS 2, javaBin Sørlandet, 2015-04-15
 * Jersey Examples bundle : https://jersey.java.net/download.html
 * Collection+JSON - Hypermedia Type : http://amundsen.com/media-types/collection/
 * Collection+JSON Git : https://github.com/collection-json
+* Java implementation of Collection+JSON, Git : https://github.com/hamnis/json-collection
+* Collection JSON JAXRS 2.0 Module : https://github.com/hamnis/collection-json-jaxrs
 * HAL - Hypertext Application Language : http://stateless.co/hal_specification.html
 * {json:api} : http://jsonapi.org/
 * JSON for Linking Data : http://json-ld.org/

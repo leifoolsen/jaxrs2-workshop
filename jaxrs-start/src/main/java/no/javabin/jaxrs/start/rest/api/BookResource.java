@@ -65,13 +65,13 @@ public class BookResource {
             logger.debug("Can not create book. ISBN: '{}' already in repository", book.getIsbn());
             throw new WebApplicationException(
                 Response.status(Response.Status.CONFLICT)
-                        .location(uriInfo.getAbsolutePath())
+                        .location(uriInfo.getRequestUri())
                         .build()
             );
         }
         BookRepository.addBook(book);
         logger.debug("Book with isbn: '{}' created", book.getIsbn());
-        return Response.created(uriInfo.getAbsolutePathBuilder().clone().path(book.getIsbn()).build())
+        return Response.created(uriInfo.getRequestUri())
                 .entity(book)
                 .build();
     }
@@ -101,7 +101,7 @@ public class BookResource {
             logger.debug("Could not update book with isbn: '{}'. Not such book in repository", book.getIsbn());
             throw new WebApplicationException(
                     Response.status(Response.Status.NOT_FOUND)
-                            .location(uriInfo.getAbsolutePath())
+                            .location(uriInfo.getRequestUri())
                             .build()
             );
         }
@@ -134,7 +134,7 @@ public class BookResource {
             logger.debug(("Book with isbn: '{}' not found"), isbn);
             throw new WebApplicationException(
                     Response.status(Response.Status.NOT_FOUND)
-                            .location(uriInfo.getAbsolutePath())
+                            .location(uriInfo.getRequestUri())
                             .build()
             );
         }
@@ -163,7 +163,6 @@ public class BookResource {
         }
 
         GenericEntity<List<Book>> entities = new GenericEntity<List<Book>>(books){};
-        UriBuilder linkBuilder = uriInfo.getRequestUriBuilder().clone();
         return Response
             .ok(entities)
             .location(uriBuilder.build())
@@ -184,13 +183,11 @@ public class BookResource {
         public static Date getDateFromString(String dateString) {
             try {
                 DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
-                Date date = df.parse(dateString);
-                return date;
+                return df.parse(dateString);
             } catch (ParseException e) {
                 try {
                     DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-                    Date date = df.parse(dateString);
-                    return date;
+                    return df.parse(dateString);
                 } catch (ParseException e2) {
                     return null;
                 }

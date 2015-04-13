@@ -1,7 +1,7 @@
 package no.javabin.jaxrs.hateoas.rest.api;
 
 import no.javabin.jaxrs.hateoas.embeddedjetty.JettyFactory;
-import no.javabin.jaxrs.hateoas.rest.application.JerseyJpaApp;
+import no.javabin.jaxrs.hateoas.rest.application.HateoasApp;
 import org.eclipse.jetty.server.Server;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -36,7 +36,7 @@ public class JaxbTest {
         // Create the client
         Client c = ClientBuilder.newClient();
 
-        target = c.target(server.getURI()).path(JerseyJpaApp.APPLICATION_PATH);
+        target = c.target(server.getURI()).path(HateoasApp.APPLICATION_PATH);
     }
 
     @AfterClass

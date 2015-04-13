@@ -10,12 +10,12 @@ import javax.ws.rs.ApplicationPath;
 // The REST-application
 @WebServlet(loadOnStartup = 1)
 @ApplicationPath("/api/*")
-public class JerseyJpaApp extends ResourceConfig {
+public class HateoasApp extends ResourceConfig {
     public static final String APPLICATION_PATH = "api";
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
     
-    public JerseyJpaApp() {
+    public HateoasApp() {
         packages("no.javabin.jaxrs.hateoas.rest");
 
         // Enable LoggingFilter & output entity.

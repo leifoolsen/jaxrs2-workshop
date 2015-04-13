@@ -3,7 +3,7 @@ package no.javabin.jaxrs.hateoas.rest.api;
 import no.javabin.jaxrs.hateoas.domain.Book;
 import no.javabin.jaxrs.hateoas.domain.Publisher;
 import no.javabin.jaxrs.hateoas.embeddedjetty.JettyFactory;
-import no.javabin.jaxrs.hateoas.rest.application.JerseyJpaApp;
+import no.javabin.jaxrs.hateoas.rest.application.HateoasApp;
 import no.javabin.jaxrs.hateoas.rest.exception.ErrorMessage;
 import no.javabin.jaxrs.hateoas.rest.interceptor.GZIPReaderInterceptor;
 import no.javabin.jaxrs.hateoas.util.CollectionJson;
@@ -69,7 +69,7 @@ public class BookResourceTest {
         // Client interceptor to deflate GZIP'ed content on client side
         c.register(GZIPReaderInterceptor.class);
 
-        target = c.target(server.getURI()).path(JerseyJpaApp.APPLICATION_PATH);
+        target = c.target(server.getURI()).path(HateoasApp.APPLICATION_PATH);
     }
 
     @AfterClass

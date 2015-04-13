@@ -1,7 +1,7 @@
 package no.javabin.jaxrs.hateoas.main;
 
 import no.javabin.jaxrs.hateoas.embeddedjetty.JettyFactory;
-import no.javabin.jaxrs.hateoas.rest.application.JerseyJpaApp;
+import no.javabin.jaxrs.hateoas.rest.application.HateoasApp;
 import com.google.common.base.MoreObjects;
 import com.google.common.primitives.Ints;
 import org.eclipse.jetty.server.Server;
@@ -19,7 +19,7 @@ public class JettyStarter {
         Server server = new JettyFactory().port(port).build();
         JettyFactory.start(server);
 
-        URI applicationURI = UriBuilder.fromUri(server.getURI()).path(JerseyJpaApp.APPLICATION_PATH).build();
+        URI applicationURI = UriBuilder.fromUri(server.getURI()).path(HateoasApp.APPLICATION_PATH).build();
         System.out.println(String.format("\nServer started with WADL available at "
                 + "%s/application.wadl\nExample usage: %s/books\n\nHIT ENTER TO STOP SERVER ...",
                 applicationURI.toString(), applicationURI.toString()));

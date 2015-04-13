@@ -20,7 +20,7 @@ import java.io.IOException;
         filterName = "JPA-Filter",
         description = "JPA Session in View Filter"
 )
-public class JerseyJpaFilter  implements Filter {
+public class JpaFilter implements Filter {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
     private JpaDatabaseConnectionManager.JpaDatabaseConnection connection;
@@ -33,12 +33,12 @@ public class JerseyJpaFilter  implements Filter {
         // Prepopulate db - for demonstration only. TODO: Use e.g. staging
         DatabasePopulator.pupulateDb(connection);
 
-        logger.debug("Filter initialized");
+        logger.debug("JPAFilter initialized");
     }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        logger.debug("JerseyJpaFilter, doFilter");
+        logger.debug("JpaFilter, doFilter");
         connection.unitOfWork().begin();
         try {
             chain.doFilter(request, response);
@@ -51,6 +51,6 @@ public class JerseyJpaFilter  implements Filter {
     @Override
     public void destroy() {
         connection.stop();
-        logger.debug("Filter destroyed");
+        logger.debug("JPAFilter destroyed");
     }
 }

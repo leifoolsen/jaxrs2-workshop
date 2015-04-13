@@ -18,6 +18,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
+import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
@@ -53,7 +54,8 @@ public class SearchResource {
 
         List<Book> books = repository.findBooksBySearchType(SearchType.Type.get(searchType), searchValue, off, lim);
 
-        CollectionJson collectionJson = CollectionJsonResourceHelper.buildCollectionJson(uriInfo, books);
+        // TODO: Bytt ut med Collection+JSON
+        GenericEntity<List<Book>> entities = new GenericEntity<List<Book>>(books){};
 
         UriBuilder rootUriBuilder = CollectionJsonResourceHelper
                 .resourceRootUriBuilder(uriInfo)
@@ -64,21 +66,15 @@ public class SearchResource {
             rootUriBuilder.queryParam("q", searchValue);
         }
         if(off > 0) {
-            int pOffset = Math.max(off - lim, 0);
-            collectionJson.collection().addLink(
-                    "prev", rootUriBuilder.clone()
-                            .queryParam("offset", pOffset)
-                            .queryParam("limit", lim).toString());
+            // TODO: Collection+JSON prev link
         }
         if(books.size() >= lim) {
-            int nOffset = off + lim;
-            collectionJson.collection().addLink(
-                    "next", rootUriBuilder.clone()
-                            .queryParam("offset", nOffset)
-                            .queryParam("limit", lim).toString());
+            // TODO: Collection+JSON next link
         }
+
+        // TODO: Returner som Collection+JSON
         return Response
-                .ok(collectionJson)
+                .ok(entities)
                 .location(uriInfo.getRequestUri())
                 .build();
     }

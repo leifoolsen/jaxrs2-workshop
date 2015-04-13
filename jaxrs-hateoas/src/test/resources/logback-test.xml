@@ -64,7 +64,7 @@
   </appender>
 
 
-  <logger name="com.github.leifoolsen" level="debug" additivity="false">
+  <logger name="no.javabin.jaxrs" level="debug" additivity="false">
     <appender-ref ref="ASYNC" />
     <appender-ref ref="ASYNC_ERROR" />
     <appender-ref ref="STDOUT" />

@@ -2,9 +2,15 @@
 Workshop: REST-baserte tjenester med JAX-RS 2, javaBin Sørlandet, 2015-04-15 
 
 ## Forberedelser
-  * Clone eller last ned ZIP-fil her.
-  * For å komme kjapt i gang med selve workshopen, så er det en fordel å bygge begge mavenprosjektene på forhånd. 
-    Det er to prosjektmapper; jaxrs-start og jaxrs-hateoas. Kjør mavenkommandoen "mvn clean install -U" i begge prosjektmappene.
+* Clone eller last ned ZIP-fil her.
+* For å komme kjapt i gang med selve workshopen, så er det en fordel å bygge begge mavenprosjektene på forhånd. 
+  Det er to prosjektmapper; jaxrs-start og jaxrs-hateoas. Kjør mavenkommandoen "mvn clean install -U" i begge prosjektmappene.
+
+### Laptop som skal benyttes må ha følgende:
+* JDK-1.7 (eller høyere)
+* Maven3 
+* IDE, f.eks. NetBeans, IntelliJ, Eclipse
+* Nettleser med JSON plugin (jeg benytter Chrome med JSONView: https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc)
 
 ## Agenda
 * Komme i gang
@@ -26,12 +32,6 @@ Workshop: REST-baserte tjenester med JAX-RS 2, javaBin Sørlandet, 2015-04-15
   * Eksempel på 3'dje-parts rammeverk
   * Design/modellering av meldingsstruktur med tanke på navigerbarhet, JSON
   * Implementere HATEOAS med "collection+json" mediatype
-
-## Laptop som skal benyttes må ha følgende:
-* JDK-1.7 (eller høyere)
-* Maven3 
-* IDE, f.eks. NetBeans, IntelliJ, Eclipse
-* Nettleser med JSON plugin (jeg benytter Chrome med JSONView: https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc)
 
 ### Nyttige lenker
 * Jersey home : https://jersey.java.net/

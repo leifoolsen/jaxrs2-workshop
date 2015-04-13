@@ -31,6 +31,9 @@ public class ApplicationConfig extends ResourceConfig {
         // See: https://jersey.java.net/documentation/latest/user-guide.html#bv.ValidationError
         property(ServerProperties.BV_SEND_ERROR_IN_RESPONSE, true);
 
+        // @ValidateOnExecution annotations on subclasses won't cause errors.
+        property(ServerProperties.BV_DISABLE_VALIDATE_ON_EXECUTABLE_OVERRIDE_CHECK, true);
+
 
         logger.debug("'{}' initialized", getClass().getName());
     }

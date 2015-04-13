@@ -80,7 +80,7 @@ public class BookResource {
 
         CollectionJson collectionJson = CollectionJsonResourceHelper.buildCollectionJson(uriInfo, book);
         return Response
-                .created(uriInfo.getRequestUri())
+                .created(uriInfo.getAbsolutePathBuilder().clone().path(params.isbn).build())
                 .entity(collectionJson)
                 .build();
     }
@@ -112,7 +112,7 @@ public class BookResource {
         CollectionJson collectionJson = CollectionJsonResourceHelper.buildCollectionJson(uriInfo, updatedBook);
         return Response
                 .ok(collectionJson)
-                .location(uriInfo.getRequestUri())
+                .location(uriInfo.getAbsolutePathBuilder().clone().path(params.isbn).build())
                 .build();
     }
 

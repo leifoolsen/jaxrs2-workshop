@@ -23,6 +23,7 @@ import javax.ws.rs.core.Response;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.junit.Assert.assertEquals;
@@ -147,6 +148,7 @@ public class BookResourceTest {
 
 
     @Test
+    @Ignore
     public void getBookByIsbnShouldReturn_OK() {
         final Response response = target
                 .path(BOOK_RESOURCE_PATH)
@@ -163,7 +165,6 @@ public class BookResourceTest {
     public void shouldGetFiveBooks() {
         Integer offset = 0;
         Integer limit = 5;
-        int numberOfBooks = 0;
         Response response = target
                     .path(BOOK_RESOURCE_PATH)
                     .queryParam("offset", offset)
@@ -178,5 +179,39 @@ public class BookResourceTest {
 
     }
 
+
+    @Test
+    @Ignore("Kan kjøres etter implementasjon av ...")
+    public void headerShouldContainContentTypeUtf8() {
+        final Response response = target
+                .path(BOOK_RESOURCE_PATH)
+                .path(TRAVELLING_TO_INFINITY_ISBN)
+                .request(MediaType.APPLICATION_JSON_TYPE)
+                .get();
+
+        assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
+
+        List<Object> objects = response.getHeaders().get("Content-Type");
+        assertNotNull(objects);
+        String s = objects.toString();
+        assertThat(s, containsString("utf-8"));
+    }
+
+
+    @Test
+    @Ignore("Kan kjøres etter implementasjon av ...")
+    public void headerShouldContainContentEncodingGzip() {
+        Response response = target
+                .path(BOOK_RESOURCE_PATH)
+                .queryParam("offset", 0)
+                .queryParam("limit", 5)
+                .request(MediaType.APPLICATION_JSON_TYPE)
+                .get();
+
+        assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
+
+        List<Object> objects = response.getHeaders().get("Content-Encoding");
+        assertTrue(objects != null && objects.contains("gzip"));
+    }
 
 }

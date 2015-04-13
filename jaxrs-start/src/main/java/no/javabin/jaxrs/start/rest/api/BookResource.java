@@ -71,7 +71,8 @@ public class BookResource {
         }
         BookRepository.addBook(book);
         logger.debug("Book with isbn: '{}' created", book.getIsbn());
-        return Response.created(uriInfo.getRequestUri())
+        return Response
+                .created(uriInfo.getAbsolutePathBuilder().clone().path(book.getIsbn()).build())
                 .entity(book)
                 .build();
     }
@@ -108,6 +109,8 @@ public class BookResource {
         BookRepository.updateBook(book);
         logger.debug("Book with isbn: '{}' updated", book.getIsbn());
         return book;  // ==> Response.Status.OK
+
+        // TODO: Metoden skal returnere responsobjekt med link til oppdatert ressurd i Location response header. Se @POST
     }
 
     @DELETE

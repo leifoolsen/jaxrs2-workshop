@@ -2,7 +2,7 @@
 Workshop: REST-baserte tjenester med JAX-RS 2, javaBin Sørlandet, 2015-04-15 
 
 ## Forberedelser
-* Clone eller last ned ZIP-fil her.
+* Clone eller last ned ZIP-fil.
 * For å komme kjapt i gang med selve workshopen, så er det en fordel å bygge begge mavenprosjektene på forhånd. 
   Det er to prosjektmapper; jaxrs-start og jaxrs-hateoas. Kjør mavenkommandoen "mvn clean install -U" i begge prosjektmappene.
 
@@ -19,7 +19,7 @@ Workshop: REST-baserte tjenester med JAX-RS 2, javaBin Sørlandet, 2015-04-15
   * @WebListener
   * Interceptors. GZIP-interceptor  
   * @Context. Resource injection av UriInfo og ResourceContext  
-  * @WebFilter, EntityManager og Unit of Work. Koble opp database med JPA
+  * @WebFilter
   * @POST og @PUT med @BeanParam injection
   * Guice og Guice Persist (utgår)
 * Feilhåndtering

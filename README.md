@@ -1,6 +1,11 @@
 # jaxrs2-workshop
 Workshop: REST-baserte tjenester med JAX-RS 2, javaBin Sørlandet, 2015-04-15 
 
+## Forberedelser
+  * Clone https://github.com/leifoolsen/jaxrs2-workshop.git, eller last ned ZIP-fil fra samme sted.
+  * For å komme kjapt i gang med selve workshopen så er det en fordel å bygge begge mavenprosjektene på forhånd. 
+    Det er to prosjektmapper; jaxrs-start og jaxrs-hateoas. Kjør mavenkommandoen "mvn clean install -U" i begge prosjektmappene.
+
 ## Agenda
 * Komme i gang
   * Lage en "Hello World" tjeneste

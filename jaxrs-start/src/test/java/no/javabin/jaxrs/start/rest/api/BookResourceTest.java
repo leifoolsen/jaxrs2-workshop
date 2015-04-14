@@ -63,7 +63,7 @@ public class BookResourceTest {
     }
 
     @Test
-    @Ignore
+    @Ignore("Kan kjøres etter at ping-ressurs er implemtert")
     public void pingShouldReturnPong() {
         final Response response = target
                 .path(BOOK_RESOURCE_PATH)
@@ -181,7 +181,40 @@ public class BookResourceTest {
 
 
     @Test
-    @Ignore("Kan kjøres etter implementasjon av ...")
+    @Ignore("Kan kjøres etter implementasjon av ExceptionMapper")
+    public void createBookWithValidationFailureShouldReturn_BAD_REQUEST() {
+        final String tooShortISBN = "97882021486";
+        Book book = Book
+                .with(tooShortISBN)
+                .title("Foo")
+                .author("Bar")
+                .published(new GregorianCalendar(1990, 1, 1).getTime())
+                .summary("Baz")
+                .build();
+
+        final Response response = target
+                .path(BOOK_RESOURCE_PATH)
+                .request(MediaType.APPLICATION_JSON_TYPE)
+                .post(Entity.entity(book, MediaType.APPLICATION_JSON_TYPE));
+
+        assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
+    }
+
+    @Test
+    @Ignore("Kan kjøres etter implementasjon av ExceptionMapper")
+    public void invalidIsbnShouldReturn_BAD_REQUEST() throws Exception {
+        final Response response = target
+                .path(BOOK_RESOURCE_PATH)
+                .path("en-tulle-isbn")
+                .request(MediaType.APPLICATION_JSON_TYPE)
+                .get();
+
+        assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
+    }
+
+
+    @Test
+    @Ignore("Kan kjøres etter implementasjon av UTF-8-filter")
     public void headerShouldContainContentTypeUtf8() {
         final Response response = target
                 .path(BOOK_RESOURCE_PATH)
@@ -199,7 +232,7 @@ public class BookResourceTest {
 
 
     @Test
-    @Ignore("Kan kjøres etter implementasjon av ...")
+    @Ignore("Kan kjøres etter implementasjon av GZIP-interceptor")
     public void headerShouldContainContentEncodingGzip() {
         Response response = target
                 .path(BOOK_RESOURCE_PATH)

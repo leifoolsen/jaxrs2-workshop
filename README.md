@@ -26,7 +26,6 @@ Workshop: REST-baserte tjenester med JAX-RS 2, javaBin Sørlandet, 2015-04-15
     * WriterInterceptor/ReaderInterceptor, GZIP 
     * ContainerResponseFilter, UTF-8 
 * HATEOAS
-  * Hvilke hjelpemidler finnes i API'et
   * Eksempel på 3'dje-parts rammeverk
   * Design/modellering av meldingsstruktur med tanke på navigerbarhet, JSON
   * Implementere HATEOAS med "collection+json" mediatype

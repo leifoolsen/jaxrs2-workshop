@@ -23,7 +23,9 @@ Workshop: REST-baserte tjenester med JAX-RS 2, javaBin Sørlandet, 2015-04-15
   * WebApplicationException
   * Bruk av Exceptionmapper for å fange "alle typer" feil
 * Filters & interceptors
-  * Noen ekaempler og bruksområder
+  * Noen eksempler og bruksområder
+    * WriterInterceptor/ReaderInterceptor, GZIP 
+    * ContainerResponseFilter, UTF-8 
 * HATEOAS
   * Hvilke hjelpemidler finnes i API'et
   * Eksempel på 3'dje-parts rammeverk
@@ -42,17 +44,3 @@ Workshop: REST-baserte tjenester med JAX-RS 2, javaBin Sørlandet, 2015-04-15
 * {json:api} : http://jsonapi.org/
 * JSON for Linking Data : http://json-ld.org/
 * On choosing a hypermedia type for your API - HAL, JSON-LD, Collection+JSON, SIREN, Oh My! : http://sookocheff.com/posts/2014-03-11-on-choosing-a-hypermedia-format/
-
-
-
-
-
-
-
-  * @WebListener
-  * Interceptors. GZIP-interceptor  
-  * @Context. Resource injection av UriInfo og ResourceContext  
-  * @WebFilter
-  * @POST og @PUT med @BeanParam injection
-  * Guice og Guice Persist (utgår)
-

@@ -16,7 +16,6 @@ Workshop: REST-baserte tjenester med JAX-RS 2, javaBin Sørlandet, 2015-04-15
 * Komme i gang
   * Lage en enkel tjeneste
   * JAX-RS Annotasjoner
-  * Responskoder
   * @POST, @PUT, @GET, @DELETE
 * Feilhåndtering
   * Responskoder

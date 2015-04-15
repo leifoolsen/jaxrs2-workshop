@@ -426,7 +426,7 @@ public class BookResourceTest {
         CollectionJson collectionJson = response.readEntity(CollectionJson.class);
         assertThat(collectionJson.collection().items(), hasSize(5));
 
-        //logger.debug(collectionJson.toString());
+        logger.debug(collectionJson.toString());
 
     }
 

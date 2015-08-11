@@ -3,7 +3,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.leifoolsen</groupId>
-    <artifactId>jersey2-guicepersist-example</artifactId>
+    <artifactId>jaxrs-guicepersist</artifactId>
     <version>0.1-SNAPSHOT</version>
     <name>${project.artifactId}</name>
     <packaging>jar</packaging>

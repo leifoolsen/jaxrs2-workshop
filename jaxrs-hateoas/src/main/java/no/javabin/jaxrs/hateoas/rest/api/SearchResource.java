@@ -54,8 +54,9 @@ public class SearchResource {
 
         List<Book> books = repository.findBooksBySearchType(SearchType.Type.get(searchType), searchValue, off, lim);
 
-        // TODO: Bytt ut med Collection+JSON
-        GenericEntity<List<Book>> entities = new GenericEntity<List<Book>>(books){};
+        //GenericEntity<List<Book>> entities = new GenericEntity<List<Book>>(books){};
+        CollectionJson collectionJson = CollectionJsonResourceHelper.buildCollectionJson(uriInfo, books);
+
 
         UriBuilder rootUriBuilder = CollectionJsonResourceHelper
                 .resourceRootUriBuilder(uriInfo)
@@ -72,9 +73,8 @@ public class SearchResource {
             // TODO: Collection+JSON next link
         }
 
-        // TODO: Returner som Collection+JSON
         return Response
-                .ok(entities)
+                .ok(collectionJson)
                 .location(uriInfo.getRequestUri())
                 .build();
     }

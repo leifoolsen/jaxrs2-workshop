@@ -31,14 +31,14 @@ Workshop: REST-baserte tjenester med JAX-RS 2, javaBin Sørlandet, 2015-04-15
   * Implementere HATEOAS med "collection+json" mediatype
 
 ### Nyttige lenker
-* Jersey home : https://jersey.java.net/
-* Jersey User Guide : https://jersey.java.net/documentation/latest/user-guide.html
-* Jersey Examples bundle : https://jersey.java.net/download.html
-* Collection+JSON - Hypermedia Type : http://amundsen.com/media-types/collection/
-* Collection+JSON Git : https://github.com/collection-json
-* Java implementation of Collection+JSON, Git : https://github.com/hamnis/json-collection
-* Collection JSON JAXRS 2.0 Module : https://github.com/hamnis/collection-json-jaxrs
-* HAL - Hypertext Application Language : http://stateless.co/hal_specification.html
-* {json:api} : http://jsonapi.org/
-* JSON for Linking Data : http://json-ld.org/
-* On choosing a hypermedia type for your API - HAL, JSON-LD, Collection+JSON, SIREN, Oh My! : http://sookocheff.com/posts/2014-03-11-on-choosing-a-hypermedia-format/
+* [Jersey home](https://jersey.java.net/)
+* [Jersey User Guide](https://jersey.java.net/documentation/latest/user-guide.html)
+* [Jersey Examples bundle](https://jersey.java.net/download.html)
+* [Collection+JSON - Hypermedia Type](http://amundsen.com/media-types/collection/)
+* [Collection+JSON Git](https://github.com/collection-json)
+* [Java implementation of Collection+JSON, Git](https://github.com/hamnis/json-collection)
+* [Collection JSON JAXRS 2.0 Module](https://github.com/hamnis/collection-json-jaxrs)
+* [HAL - Hypertext Application Language](http://stateless.co/hal_specification.html)
+* [{json:api}](http://jsonapi.org/)
+* [JSON for Linking Data](http://json-ld.org/)
+* [On choosing a hypermedia type for your API - HAL, JSON-LD, Collection+JSON, SIREN, Oh My!](http://sookocheff.com/posts/2014-03-11-on-choosing-a-hypermedia-format/)
